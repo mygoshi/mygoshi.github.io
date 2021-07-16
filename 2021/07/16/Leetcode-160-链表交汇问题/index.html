@@ -14,11 +14,13 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="最近开始慢刷leetcode，对自己做题的思路做一个简单的记录以加深印象。">
+  <meta name="description" content="题目描述
+给你两个单链表的头节点 headA 和 headB , 请你找出并返回两个单链表相交的起始节点. 如果两个链表没有交点, 返回 null . 
+">
   <meta name="author" content="Joshua Shi">
   <meta name="keywords" content="">
   
-  <title>leetcode做题记录 - myGOSHi</title>
+  <title>Leetcode.160-链表交汇问题 - myGOSHi</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -275,7 +277,7 @@ mjx-container[display="true"] + br {
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="leetcode做题记录">
+            <span class="h2" id="subtitle" title="Leetcode.160-链表交汇问题">
               
             </span>
 
@@ -302,7 +304,7 @@ mjx-container[display="true"] + br {
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      462 字
+      424 字
     </span>
   
 
@@ -342,7 +344,7 @@ mjx-container[display="true"] + br {
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">leetcode做题记录</h1>
+            <h1 style="display: none">Leetcode.160-链表交汇问题</h1>
             
               <p class="note note-info">
                 
@@ -351,25 +353,25 @@ mjx-container[display="true"] + br {
               </p>
             
             <div class="markdown-body">
-              <p>最近开始慢刷leetcode，对自己做题的思路做一个简单的记录以加深印象。</p>
-<span id="more"></span>
-
-<h1 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h1><h2 id="leetcode-160-链表交汇问题"><a href="#leetcode-160-链表交汇问题" class="headerlink" title="leetcode.160-链表交汇问题"></a>leetcode.160-链表交汇问题</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><blockquote>
-<p>给你两个单链表的头节点 <code>headA</code> 和 <code>headB</code> ，请你找出并返回两个单链表相交的起始节点。如果两个链表没有交点，返回 <code>null</code> 。</p>
-<p>图示两个链表在节点 <code>c1</code> 开始相交<strong>：</strong></p>
-<p><img src="https://img.mygoshi.top/image/160_statement.png" srcset="/img/loading.gif" lazyload></p>
-<p>原文出处<strong>：</strong><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/intersection-of-two-linked-lists/description/">力扣</a></p>
+              <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><blockquote>
+<p>给你两个单链表的头节点 <code>headA</code> 和 <code>headB</code> , 请你找出并返回两个单链表相交的起始节点. 如果两个链表没有交点, 返回 <code>null</code> . </p>
 </blockquote>
-<h3 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h3><h4 id="解法1-HashSet"><a href="#解法1-HashSet" class="headerlink" title="解法1-HashSet"></a>解法1-HashSet</h4><p>使用HashSet将A链表中的元素装入其中，再便利B链表，如果B链表中的某个节点包含在了该HashSet中，则表示有交汇点；如果循环结束后仍没有找到，则没有交汇点，返回null。</p>
-<h4 id="解法2-双指针"><a href="#解法2-双指针" class="headerlink" title="解法2-双指针"></a>解法2-双指针</h4><p>假设交汇部分的长度为c，则链表A的长度为a+c，链表B的长度为b+c。那么a+b+c=b+c+a，也就是说，使用两个指针分别从两个方向将两个链表遍历一边，当两个指针相等时，所指向的就是链表的交汇处，如果没有交汇，那么此时两个指针都指向了遍历后的null。<br>具体思路为:</p>
+<span id="more"></span>
+<blockquote>
+<p>图示两个链表在节点 <code>c1</code> 开始相交:</p>
+<p><img src="https://img.mygoshi.top/image/160_statement.png" srcset="/img/loading.gif" lazyload></p>
+<p>原文出处:<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/intersection-of-two-linked-lists/description/">力扣</a></p>
+</blockquote>
+<h1 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h1><h2 id="解法1-HashSet"><a href="#解法1-HashSet" class="headerlink" title="解法1-HashSet"></a>解法1-HashSet</h2><p>使用HashSet将A链表中的元素装入其中, 再便利B链表, 如果B链表中的某个节点包含在了该HashSet中, 则表示有交汇点; 如果循环结束后仍没有找到, 则没有交汇点, 返回null. </p>
+<h2 id="解法2-双指针"><a href="#解法2-双指针" class="headerlink" title="解法2-双指针"></a>解法2-双指针</h2><p>假设交汇部分的长度为c, 则链表A的长度为a+c, 链表B的长度为b+c. 那么a+b+c=b+c+a, 也就是说, 使用两个指针分别从两个方向将两个链表遍历一边, 当两个指针相等时, 所指向的就是链表的交汇处, 如果没有交汇, 那么此时两个指针都指向了遍历后的null.<br>具体思路为:</p>
 <ol>
-<li>设置指针pA和pB分别指向headA和headB；</li>
-<li>两指针分别向后遍历，当某一指针遍历到链表末尾(即<code>pA/pB==null</code>)时，将其指向另一个链表的头；</li>
-<li>当两指针指向的节点相同时，返回当前对象。</li>
+<li>设置指针<code>pA</code>和<code>pB</code>分别指向<code>headA</code>和<code>headB</code>; </li>
+<li>两指针分别向后遍历, 当某一指针遍历到链表末尾(即<code>pA/pB==null</code>)时, 将其指向另一个链表的头; </li>
+<li>当两指针指向的节点相同时, 返回当前对象. </li>
 </ol>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><h4 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> ListNode <span class="hljs-title">getIntersectionNode</span><span class="hljs-params">(ListNode headA, ListNode headB)</span> </span>{<br>        <span class="hljs-comment">// 使用HashSet</span><br>        Set&lt;ListNode&gt; vals = <span class="hljs-keyword">new</span> HashSet&lt;ListNode&gt;();<br>        ListNode temp = headA;<br>        <span class="hljs-keyword">while</span>(temp != <span class="hljs-keyword">null</span>) {<br>            vals.add(temp);<br>            temp = temp.next;<br>        }<br>        temp = headB;<br>        <span class="hljs-keyword">while</span>(temp != <span class="hljs-keyword">null</span>) {<br>            <span class="hljs-keyword">if</span>(vals.contains(temp)) {<br>                <span class="hljs-keyword">return</span> temp;<br>            }<br>            temp = temp.next;<br>        }<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>    }<br>}<br></code></pre></td></tr></table></figure>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><h2 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> ListNode <span class="hljs-title">getIntersectionNode</span><span class="hljs-params">(ListNode headA, ListNode headB)</span> </span>{<br>        <span class="hljs-comment">// 使用HashSet</span><br>        Set&lt;ListNode&gt; vals = <span class="hljs-keyword">new</span> HashSet&lt;ListNode&gt;();<br>        ListNode temp = headA;<br>        <span class="hljs-keyword">while</span>(temp != <span class="hljs-keyword">null</span>) {<br>            vals.add(temp);<br>            temp = temp.next;<br>        }<br>        temp = headB;<br>        <span class="hljs-keyword">while</span>(temp != <span class="hljs-keyword">null</span>) {<br>            <span class="hljs-keyword">if</span>(vals.contains(temp)) {<br>                <span class="hljs-keyword">return</span> temp;<br>            }<br>            temp = temp.next;<br>        }<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>    }<br>}<br></code></pre></td></tr></table></figure>
 
-<h4 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> ListNode <span class="hljs-title">getIntersectionNode</span><span class="hljs-params">(ListNode headA, ListNode headB)</span> </span>{<br>        <span class="hljs-comment">//使用双指针</span><br>        <span class="hljs-keyword">if</span>(headA == <span class="hljs-keyword">null</span> || headB == <span class="hljs-keyword">null</span>) {<br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>        }<br>        ListNode tempA = headA, tempB = headB;<br>        <span class="hljs-keyword">while</span>(tempA != tempB) {<br>            tempA = (tempA == <span class="hljs-keyword">null</span>) ? headB : tempA.next;<br>            tempB = (tempB == <span class="hljs-keyword">null</span>) ? headA : tempB.next;<br>        }<br>        <span class="hljs-keyword">return</span> tempB;<br>    }<br>}<br></code></pre></td></tr></table></figure>
+<h2 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> ListNode <span class="hljs-title">getIntersectionNode</span><span class="hljs-params">(ListNode headA, ListNode headB)</span> </span>{<br>        <span class="hljs-comment">//使用双指针</span><br>        <span class="hljs-keyword">if</span>(headA == <span class="hljs-keyword">null</span> || headB == <span class="hljs-keyword">null</span>) {<br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>        }<br>        ListNode tempA = headA, tempB = headB;<br>        <span class="hljs-keyword">while</span>(tempA != tempB) {<br>            tempA = (tempA == <span class="hljs-keyword">null</span>) ? headB : tempA.next;<br>            tempB = (tempB == <span class="hljs-keyword">null</span>) ? headA : tempB.next;<br>        }<br>        <span class="hljs-keyword">return</span> tempB;<br>    }<br>}<br></code></pre></td></tr></table></figure>
 
 
 
@@ -381,10 +383,19 @@ mjx-container[display="true"] + br {
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/leetcode/">leetcode</a>
+                      <a class="hover-with-bg" href="/categories/Leetcode/">Leetcode</a>
                     
                   </div>
                 
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E9%93%BE%E8%A1%A8/">链表</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">双指针</a>
+                    
+                  </div>
                 
               </div>
               
@@ -398,6 +409,12 @@ mjx-container[display="true"] + br {
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2021/07/16/Leetcode-21-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Leetcode.21-合并两个有序链表</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
