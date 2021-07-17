@@ -14,13 +14,11 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="题目描述
-给你两个单链表的头节点 headA 和 headB , 请你找出并返回两个单链表相交的起始节点. 如果两个链表没有交点, 返回 null . 
-">
+  <meta name="description" content="">
   <meta name="author" content="Joshua Shi">
   <meta name="keywords" content="">
   
-  <title>Leetcode.160-链表交汇问题 - myGOSHi</title>
+  <title>Leetcode.24-两两交换链表中的节点 - myGOSHi</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -277,7 +275,7 @@ mjx-container[display="true"] + br {
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Leetcode.160-链表交汇问题">
+            <span class="h2" id="subtitle" title="Leetcode.24-两两交换链表中的节点">
               
             </span>
 
@@ -292,8 +290,8 @@ mjx-container[display="true"] + br {
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-07-16 09:09" pubdate>
-        2021年7月16日 上午
+      <time datetime="2021-07-17 21:08" pubdate>
+        2021年7月17日 晚上
       </time>
     </span>
   
@@ -304,7 +302,7 @@ mjx-container[display="true"] + br {
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      424 字
+      328 字
     </span>
   
 
@@ -314,7 +312,7 @@ mjx-container[display="true"] + br {
       <i class="iconfont icon-clock-fill"></i>
       
       
-      5
+      3
        分钟
     </span>
   
@@ -344,36 +342,33 @@ mjx-container[display="true"] + br {
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Leetcode.160-链表交汇问题</h1>
+            <h1 style="display: none">Leetcode.24-两两交换链表中的节点</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：1 天前
+                  本文最后更新于：几秒前
                 
               </p>
             
             <div class="markdown-body">
               <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><blockquote>
-<p>给你两个单链表的头节点 <code>headA</code> 和 <code>headB</code> , 请你找出并返回两个单链表相交的起始节点. 如果两个链表没有交点, 返回 <code>null</code> . </p>
+<p>给定一个链表，两两交换其中相邻的节点，并返回交换后的链表。</p>
+<p><strong>你不能只是单纯的改变节点内部的值</strong>，而是需要实际的进行节点交换。</p>
+<p>示例:</p>
+<p><img src="https://img.mygoshi.top/image/swap_ex1.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>原文出处: <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/intersection-of-two-linked-lists/description/">力扣</a></p>
 </blockquote>
-<span id="more"></span>
-<blockquote>
-<p>图示两个链表在节点 <code>c1</code> 开始相交:</p>
-<p><img src="https://img.mygoshi.top/image/160_statement.png" srcset="/img/loading.gif" lazyload></p>
-<p>原文出处:<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/intersection-of-two-linked-lists/description/">力扣</a></p>
-</blockquote>
-<h1 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h1><h2 id="解法1-HashSet"><a href="#解法1-HashSet" class="headerlink" title="解法1-HashSet"></a>解法1-HashSet</h2><p>使用HashSet将A链表中的元素装入其中, 再便利B链表, 如果B链表中的某个节点包含在了该HashSet中, 则表示有交汇点; 如果循环结束后仍没有找到, 则没有交汇点, 返回null. </p>
-<h2 id="解法2-双指针"><a href="#解法2-双指针" class="headerlink" title="解法2-双指针"></a>解法2-双指针</h2><p>假设交汇部分的长度为c, 则链表A的长度为a+c, 链表B的长度为b+c. 那么a+b+c=b+c+a, 也就是说, 使用两个指针分别从两个方向将两个链表遍历一边, 当两个指针相等时, 所指向的就是链表的交汇处, 如果没有交汇, 那么此时两个指针都指向了遍历后的null.<br>具体思路为:</p>
-<ol>
-<li>设置指针<code>pA</code>和<code>pB</code>分别指向<code>headA</code>和<code>headB</code>; </li>
-<li>两指针分别向后遍历, 当某一指针遍历到链表末尾(即<code>pA/pB==null</code>)时, 将其指向另一个链表的头; </li>
-<li>当两指针指向的节点相同时, 返回当前对象. </li>
+<h1 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h1><p>迭代的方法比较简单, <strong>递归</strong>的方法是一开始没有想到的, 简单记录一下.</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>若不考虑链表为空或链表长度为1的情况, 链表节点两两交换可以理解成链表<strong>前两个</strong>节点交换的递归, 只需要在方法中实现前两个节点相互交换后连接上以<strong>第三个</strong>节点为头节点的递归调用. 当链表为空或链表长度为1时, 返回头节点.</p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol>
+<li>若链表为空或链表长度为1, 返回头节点;</li>
+<li>交换<code>head</code>和<code>head.next</code>;</li>
+<li><code>head.next</code>赋值为以第三个节点为参数的递归调用;</li>
+<li>返回第二个节点.</li>
 </ol>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><h2 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> ListNode <span class="hljs-title">getIntersectionNode</span><span class="hljs-params">(ListNode headA, ListNode headB)</span> </span>{<br>        <span class="hljs-comment">// 使用HashSet</span><br>        Set&lt;ListNode&gt; vals = <span class="hljs-keyword">new</span> HashSet&lt;ListNode&gt;();<br>        ListNode temp = headA;<br>        <span class="hljs-keyword">while</span>(temp != <span class="hljs-keyword">null</span>) {<br>            vals.add(temp);<br>            temp = temp.next;<br>        }<br>        temp = headB;<br>        <span class="hljs-keyword">while</span>(temp != <span class="hljs-keyword">null</span>) {<br>            <span class="hljs-keyword">if</span>(vals.contains(temp)) {<br>                <span class="hljs-keyword">return</span> temp;<br>            }<br>            temp = temp.next;<br>        }<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>    }<br>}<br></code></pre></td></tr></table></figure>
-
-<h2 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> ListNode <span class="hljs-title">getIntersectionNode</span><span class="hljs-params">(ListNode headA, ListNode headB)</span> </span>{<br>        <span class="hljs-comment">//使用双指针</span><br>        <span class="hljs-keyword">if</span>(headA == <span class="hljs-keyword">null</span> || headB == <span class="hljs-keyword">null</span>) {<br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>        }<br>        ListNode tempA = headA, tempB = headB;<br>        <span class="hljs-keyword">while</span>(tempA != tempB) {<br>            tempA = (tempA == <span class="hljs-keyword">null</span>) ? headB : tempA.next;<br>            tempB = (tempB == <span class="hljs-keyword">null</span>) ? headA : tempB.next;<br>        }<br>        <span class="hljs-keyword">return</span> tempB;<br>    }<br>}<br></code></pre></td></tr></table></figure>
-
-
+<h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><p>时间复杂度: <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="4.844ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 2141 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(1152,0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(1752,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>, <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex" xmlns="http://www.w3.org/2000/svg" width="1.357ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 600 453"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g></g></g></svg></mjx-container>为链表的长度</p>
+<p>空间复杂度: <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="4.844ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 2141 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(1152,0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(1752,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container></p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> ListNode <span class="hljs-title">swapPairs</span><span class="hljs-params">(ListNode head)</span> </span>{<br>        <span class="hljs-comment">// 递归</span><br>        <span class="hljs-comment">// 其实交换的步骤有点拖沓, 但我懒得改了(逃</span><br>        <span class="hljs-keyword">if</span>( head == <span class="hljs-keyword">null</span> || head.next == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> head;<br>        ListNode temp = head;<br>        ListNode temp1 = head.next;<br>        ListNode temp2 = head.next.next;<br>        head.next.next = temp;<br>        temp.next = swapPairs(temp2);<br>        <span class="hljs-keyword">return</span> temp1;<br>    }<br>}<br></code></pre></td></tr></table></figure>
 
             </div>
             <hr>
@@ -393,7 +388,7 @@ mjx-container[display="true"] + br {
                     
                       <a class="hover-with-bg" href="/tags/%E9%93%BE%E8%A1%A8/">链表</a>
                     
-                      <a class="hover-with-bg" href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">双指针</a>
+                      <a class="hover-with-bg" href="/tags/%E9%80%92%E5%BD%92/">递归</a>
                     
                   </div>
                 
@@ -410,18 +405,12 @@ mjx-container[display="true"] + br {
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/07/16/Leetcode-21-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Leetcode.21-合并两个有序链表</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/07/08/Practical%20MEMS_Gyroscopes/">
-                        <span class="hidden-mobile">Practical MEMS_Gyroscopes</span>
+                      <a href="/2021/07/16/Leetcode-19-%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E7%BB%93%E7%82%B9/">
+                        <span class="hidden-mobile">Leetcode.19-删除链表的倒数第N个结点</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
