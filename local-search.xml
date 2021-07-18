@@ -13,14 +13,16 @@
     
     <categories>
       
-      <category>-Leetcode</category>
+      <category>Leetcode</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>-链表 -递归</tag>
+      <tag>链表</tag>
+      
+      <tag>递归</tag>
       
     </tags>
     
@@ -38,14 +40,16 @@
     
     <categories>
       
-      <category>-Leetcode</category>
+      <category>Leetcode</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>-链表 -双指针</tag>
+      <tag>链表</tag>
+      
+      <tag>双指针</tag>
       
     </tags>
     
@@ -63,14 +67,16 @@
     
     <categories>
       
-      <category>-Leetcode</category>
+      <category>Leetcode</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>-链表 -递归</tag>
+      <tag>链表</tag>
+      
+      <tag>递归</tag>
       
     </tags>
     
@@ -88,14 +94,16 @@
     
     <categories>
       
-      <category>-Leetcode</category>
+      <category>Leetcode</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>-链表 -双指针</tag>
+      <tag>链表</tag>
+      
+      <tag>双指针</tag>
       
     </tags>
     
@@ -113,14 +121,16 @@
     
     <categories>
       
-      <category>-MEMS</category>
+      <category>MEMS</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>-MEMS 陀螺仪 -误差补偿</tag>
+      <tag>MEMS 陀螺仪</tag>
+      
+      <tag>误差补偿</tag>
       
     </tags>
     
