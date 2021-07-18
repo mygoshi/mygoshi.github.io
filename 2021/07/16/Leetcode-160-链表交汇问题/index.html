@@ -303,7 +303,7 @@ mjx-container[display="true"] + br {
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      429 字
+      432 字
     </span>
   
 
@@ -355,7 +355,6 @@ mjx-container[display="true"] + br {
               <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><blockquote>
 <p>给你两个单链表的头节点 <code>headA</code> 和 <code>headB</code> , 请你找出并返回两个单链表相交的起始节点。如果两个链表没有交点，返回 <code>null</code> . </p>
 <span id="more"></span>
-
 <p>图示两个链表在节点 <code>c1</code> 开始相交：</p>
 <p><img src="https://img.mygoshi.top/image/160_statement.png" srcset="/img/loading.gif" lazyload></p>
 <p>原文出处：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/intersection-of-two-linked-lists/description/">力扣</a></p>
@@ -363,8 +362,8 @@ mjx-container[display="true"] + br {
 <h1 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h1><h2 id="解法-1-HashSet"><a href="#解法-1-HashSet" class="headerlink" title="解法 1-HashSet"></a>解法 1-HashSet</h2><p>使用 HashSet 将 A 链表中的元素装入其中，再便利 B 链表，如果 B 链表中的某个节点包含在了该 HashSet 中，则表示有交汇点；如果循环结束后仍没有找到，则没有交汇点，返回 null. </p>
 <h2 id="解法-2-双指针"><a href="#解法-2-双指针" class="headerlink" title="解法 2-双指针"></a>解法 2-双指针</h2><p>假设交汇部分的长度为 c, 则链表 A 的长度为 a+c, 链表 B 的长度为 b+c. 那么 a+b+c=b+c+a, 也就是说，使用两个指针分别从两个方向将两个链表遍历一边，当两个指针相等时，所指向的就是链表的交汇处，如果没有交汇，那么此时两个指针都指向了遍历后的 null.<br>具体思路为：</p>
 <ol>
-<li>设置指针<code>pA</code>和<code>pB</code>分别指向<code>headA</code>和<code>headB</code>; </li>
-<li>两指针分别向后遍历，当某一指针遍历到链表末尾（即<code>pA/pB==null</code>) 时，将其指向另一个链表的头；</li>
+<li>设置指针 <code>pA</code> 和 <code>pB</code> 分别指向 <code>headA</code> 和 <code>headB</code>；</li>
+<li>两指针分别向后遍历，当某一指针遍历到链表末尾（即 <code>pA/pB==null</code> ） 时，将其指向另一个链表的头；</li>
 <li>当两指针指向的节点相同时，返回当前对象。</li>
 </ol>
 <h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><h2 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> ListNode <span class="hljs-title">getIntersectionNode</span><span class="hljs-params">(ListNode headA, ListNode headB)</span> </span>{<br>        <span class="hljs-comment">// 使用 HashSet</span><br>        Set&lt;ListNode&gt; vals = <span class="hljs-keyword">new</span> HashSet&lt;ListNode&gt;();<br>        ListNode temp = headA;<br>        <span class="hljs-keyword">while</span>(temp != <span class="hljs-keyword">null</span>) {<br>            vals.add(temp);<br>            temp = temp.next;<br>        }<br>        temp = headB;<br>        <span class="hljs-keyword">while</span>(temp != <span class="hljs-keyword">null</span>) {<br>            <span class="hljs-keyword">if</span>(vals.contains(temp)) {<br>                <span class="hljs-keyword">return</span> temp;<br>            }<br>            temp = temp.next;<br>        }<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>    }<br>}<br></code></pre></td></tr></table></figure>
@@ -379,7 +378,7 @@ mjx-container[display="true"] + br {
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/Leetcode/">Leetcode</a>
+                      <a class="hover-with-bg" href="/categories/Leetcode/">-Leetcode</a>
                     
                   </div>
                 
@@ -387,9 +386,7 @@ mjx-container[display="true"] + br {
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E9%93%BE%E8%A1%A8/">链表</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">双指针</a>
+                      <a class="hover-with-bg" href="/tags/%E9%93%BE%E8%A1%A8-%E5%8F%8C%E6%8C%87%E9%92%88/">-链表 -双指针</a>
                     
                   </div>
                 
