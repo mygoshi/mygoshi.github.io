@@ -29,19 +29,6 @@
   
   
   <entry>
-    <title>1</title>
-    <link href="/2021/09/11/1/"/>
-    <url>/2021/09/11/1/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>桶排序及相关问题</title>
     <link href="/2021/09/04/%E6%A1%B6%E6%8E%92%E5%BA%8F%E5%8F%8A%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/"/>
     <url>/2021/09/04/%E6%A1%B6%E6%8E%92%E5%BA%8F%E5%8F%8A%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</url>
@@ -199,9 +186,9 @@
       
       <tag>树</tag>
       
-      <tag>递归</tag>
-      
       <tag>二叉树</tag>
+      
+      <tag>递归</tag>
       
     </tags>
     
