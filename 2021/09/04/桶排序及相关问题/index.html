@@ -14,7 +14,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="">
+  <meta name="description" content="排序思想顾名思义，桶排序是预先设置按已按大小顺序排列的桶，根据数的大小将数据放入对应的桶中，再对每个桶中的数据进行排序（可用快速排序或归并排序），最后将每个桶的数据进行顺序拼接，由于桶已经按照大小顺序进行了排序，这样拼接好的数组也就完成了排序。实际使用中直接使用桶排序的并不多，多用的是基于桶排序思想的基数排序和计数排序。">
   <meta name="author" content="Joshua Shi">
   <meta name="keywords" content="">
   
@@ -353,7 +353,9 @@ mjx-container[display="true"] + br {
             <h1 style="display: none">桶排序及相关问题</h1>
             
             <div class="markdown-body">
-              <h1 id="排序思想"><a href="#排序思想" class="headerlink" title="排序思想"></a>排序思想</h1><p>顾名思义，桶排序是预先设置按已按大小顺序排列的桶，根据数的大小将数据放入对应的桶中，再对每个桶中的数据进行排序（可用<strong>快速排序</strong>或<strong>归并排序</strong>），最后将每个桶的数据进行顺序拼接，由于桶已经按照大小顺序进行了排序，这样拼接好的数组也就完成了排序。实际使用中直接使用桶排序的并不多，多用的是基于桶排序思想的基数排序和计数排序。<br>虽然桶排序在实际排序中应用的不多，但是桶排序的思想在解决一些与频次相关的问题的时候还是非常好用的。</p>
+              <h1 id="排序思想"><a href="#排序思想" class="headerlink" title="排序思想"></a>排序思想</h1><p>顾名思义，桶排序是预先设置按已按大小顺序排列的桶，根据数的大小将数据放入对应的桶中，再对每个桶中的数据进行排序（可用<strong>快速排序</strong>或<strong>归并排序</strong>），最后将每个桶的数据进行顺序拼接，由于桶已经按照大小顺序进行了排序，这样拼接好的数组也就完成了排序。实际使用中直接使用桶排序的并不多，多用的是基于桶排序思想的基数排序和计数排序。</p>
+<span id="more"></span>
+<p>虽然桶排序在实际排序中应用的不多，但是桶排序的思想在解决一些与频次相关的问题的时候还是非常好用的。</p>
 <h1 id="图解"><a href="#图解" class="headerlink" title="图解"></a>图解</h1><p><img src="https://img.mygoshi.top/image/image-20210904172903111.png" srcset="/img/loading.gif" lazyload alt="桶排序的算法思想"></p>
 <p>出处: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1A4411N7cG">Bilibili</a></p>
 <h1 id="题目举例"><a href="#题目举例" class="headerlink" title="题目举例"></a>题目举例</h1><h2 id="1-Leetcode-347-前-K-个高频元素"><a href="#1-Leetcode-347-前-K-个高频元素" class="headerlink" title="1. Leetcode.347 前 K 个高频元素"></a>1. Leetcode.347 前 K 个高频元素</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><blockquote>
@@ -409,6 +411,12 @@ mjx-container[display="true"] + br {
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2021/09/11/1/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">1</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
